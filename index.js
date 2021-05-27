@@ -1,7 +1,7 @@
 const crypt = require('./crypto')
 
 const options = { fileMustExist: true, verbose: console.log }
-const db = require('better-sqlite3')('./test.db3', options);
+const db = require('better-sqlite3')('./test.db3', options)
 
 const inscompte = db.prepare('INSERT INTO compte (id, dhc, datax) VALUES (@id, @dhc, @datax)')
 const selcompte = db.prepare('SELECT * FROM compte')
@@ -26,4 +26,4 @@ res.forEach(r => {
 // db.transaction(crcompteavatar)(rows)
 // select()
 // crypt.test()
-crypt.test2()
+// crypt.test2()
