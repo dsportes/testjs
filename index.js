@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+const crypt = require('./crypto')
 
 const options = { fileMustExist: true, verbose: console.log }
 const db = require('better-sqlite3')('./test.db3', options);
@@ -12,7 +12,7 @@ function crcompteavatar (rows) {
 }
 
 const rows = [
-    { id:BigInt('99999999999999999'), dhc:20210518114125, datax:crypto.randomBytes(60) }
+    { id:BigInt('99999999999999999'), dhc:20210518114125, datax:crypt.random(60) }
 ]
 db.transaction(crcompteavatar)(rows)
 
@@ -22,3 +22,8 @@ res.forEach(r => {
     const dhc = Number(r.dhc)
     console.log(typeof r.id + ' ' + typeof r.dhc + ' ' + typeof r.datax + ' ' + typeof dhc)
 })
+
+// db.transaction(crcompteavatar)(rows)
+// select()
+// crypt.test()
+crypt.test2()
