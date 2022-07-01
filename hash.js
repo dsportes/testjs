@@ -16,7 +16,9 @@ function hashBin (str, big = false, b64 = false, seed = 0) {
   return b64 ? int2base64(r) : r
 }
 
-for (let i = 0; i < 10; i++) {
+console.log(Number.MAX_SAFE_INTEGER - 3, (Number.MAX_SAFE_INTEGER - 3) % 4)
+
+for (let i = 0; i < 5; i++) {
   const rb = crypto.randomBytes(32)
   const hb = hashBin(rb)
   console.log(hb, hb % 4)
